@@ -1,0 +1,16 @@
+Guardar los datos
+$ cd c:/xampp/htdocs/proyecto
+
+Sly_PC@SLY_PC-PC /c/xampp/htdocs/proyecto (master)
+$ git add -A
+
+Sly_PC@SLY_PC-PC /c/xampp/htdocs/proyecto (master)
+$ git commit -m "prueba deiber"
+
+Sly_PC@SLY_PC-PC /c/xampp/htdocs/proyecto (master)
+$ git push -u origin master
+
+
+//jalar los datos
+Sly_PC@SLY_PC-PC /c/xampp/htdocs/proyecto (master)
+$ git pull
