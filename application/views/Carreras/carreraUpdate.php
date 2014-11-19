@@ -6,7 +6,7 @@
 				<div class="col-md-4">
 				<h4>Modifique la carrera.</h4>
 					<?php
-						echo form_open('Carrera/update');
+						echo form_open('Carreras/update');
 					?>
 					<div class="form-group">
 						<?php
@@ -25,8 +25,8 @@
 					<div class="form-group">
 						<?php
 							$codigo = array(
-				              'name'        => 'nombre',
-				              'id'          => 'nombre_id',
+				              'name'        => 'codigo',
+				              'id'          => 'codigo_id',
 				              'maxlength'   => '100',
 				              'placeholder' => 'Nombre',
 				              'class'		=> 'form-control',

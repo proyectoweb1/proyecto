@@ -31,7 +31,7 @@ class Carreras extends CI_Controller
 
 		);
 		$this->Carrera_model->insert($data);
-		redirect('Carrera/index', 'refresh');
+		redirect('Carreras/index', 'refresh');
 	}
 	function update(){
 		$id = $this->input->post('id');

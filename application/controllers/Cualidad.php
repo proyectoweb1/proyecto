@@ -12,15 +12,7 @@ class Cualidad extends CI_Controller
 		$this->load->view('header');
 		$this->load->view('Cualidad/cualidad',$query);
 	}
-	function create()
-	{
-		$cualidad = $this->input->post('nombre');
-		$data = array(
-		   'nombre' => $cualidad
-		);
-		$this->Cualidad_model->insert($data);
-		redirect('Cualidad', 'refresh');
-	}
+	 
 	function toupdate(){
 		$id = $this->input->get("uid");
 		$query['cualidad'] = $this->Cualidad_model->getid($id);
