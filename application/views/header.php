@@ -19,21 +19,12 @@
 					<li><a href="#">Dashboard</a></li>
 					<li><a href="<?php echo base_url("index.php/Carreras/");?>">Carreras</a></li>
 					<li><a href="#">Estudiantes</a></li>
-<<<<<<< HEAD
 					<li><a href="<?php echo	base_url("index.php/Usuario/")?>">Usuarios</a></li>
 					<li><a href="<?php echo	base_url("index.php/Role/")?>">Role</a></li>
 					<li><a href="<?php echo	base_url("index.php/Cualidad/")?>">Cualidad</a></li>
 					<li><a href="<?php echo	base_url("index.php/Tecnologia/")?>">Tecnologia</a></li>
 					<li><a href="<?php echo	base_url("index.php/Proyecto/")?>">Proyectos</a></li>
 					<li><a href="<?php echo	base_url("index.php/Cursos/")?>">Cursos</a></li>
-=======
-					<li><a href="<?php echo base_url("index.php/Usuario/getall");?>">Usuarios</a></li>
-					<li><a href="<?php echo base_url("index.php/Role/");?>">Role</a></li>
-					<li><a href="<?php echo base_url("index.php/Cualidad/");?>">Cualidad</a></li>
-					<li><a href="<?php echo base_url("index.php/Tecnologia/");?>">Tecnologia</a></li>
-					<li><a href="<?php echo base_url("index.php/Proyecto/");?>">Proyectos</a></li>
-					<li><a href="<?php echo base_url("index.php/Cursos/");?>">Cursos</a></li>
->>>>>>> f98cf0856c8f07a22b9e6e934bc83a47ac4b6367
 					<li><a href="#">Cerrar Sesion</a></li>
 				</div>
 			</div>
