@@ -6,7 +6,7 @@
 			<div class="col-md-3">
 			<div class="form-group">
 			<?php
-					echo form_open('Usuario/Create');
+					echo form_open('Usuario/Control');
 					$cedula = array(
 		              'name'        => 'cedula',
 		              'id'          => 'cedula',
@@ -32,10 +32,10 @@
 			<div class="form-group">
 				<?php
 				$apellido = array(
-		              'name'        => 'lastname',
-		              'id'          => 'lastname',
+		              'name'        => 'primerapellido',
+		              'id'          => 'primerapellido',
 		              'maxlength'   => '100',
-		              'placeholder' => 'Apellido',
+		              'placeholder' => 'Primer apellido',
 		              'class'		=> 'form-control',
 		            );
 					echo form_input($apellido);
@@ -47,7 +47,7 @@
 		              'name'        => 'segundoapellido',
 		              'id'          => 'segundoapellido',
 		              'maxlength'   => '100',
-		              'placeholder' => 'Apellido',
+		              'placeholder' => 'Segundo apellido',
 		              'class'		=> 'form-control',
 		            );
 				echo form_input($segundoapellido);
@@ -56,10 +56,10 @@
 			<div class="form-group">
 				<?php
 				$username = array(
-		              'name'        => 'username',
-		              'id'          => 'username',
+		              'name'        => 'NickName',
+		              'id'          => 'NickName',
 		              'maxlength'   => '100',
-		              'placeholder' => 'Nombre Usuario',
+		              'placeholder' => 'Nick name',
 		              'class'		=> 'form-control',
 		            );
 				echo form_input($username);
@@ -81,6 +81,7 @@
 					    'name' => 'button',
 					    'id' => 'button',
 					    'type' => 'submit',
+					    'name' => 'agregar',
 					    'class' => 'btn btn-default',
 					    'content' => 'Guardar'
 					);
@@ -93,12 +94,20 @@
 				<?php
 					$table = "<table id=\"table\" class=\"table table-bordered\"><tr><th>Cedula</th><th>Nombre</th><th>Primer Apellido</th><th>Segundo Apellido</th><th>Nombre Usuario</th><th>ID Role</th><th>Editar</th><th>Eliminar</th></tr>";
 						foreach ($name as $nom) {
-							$table.= "<tr><td>".$nom->id."</td><td>".$nom->nombre."</td><td>".$nom->primerapellido."</td><td>".$nom->segundoapellido."</td><td>".$nom->nombreusuario."</td><td>".$nom->role_id."</td>";
-							$table.="<td><button type=\"button\" data-id=\"$nom->id\" class=\"editar btn btn-default\">Editar</button></td><td><button type=\"button\" data-id=\"$nom->id\" class=\"eliminar btn btn-default\">Eliminar</button></td></tr>";
+							$roll;
+							if ($nom->role_id == 1) {
+								$roll = "Administrador";
+							}elseif ($nom->role_id == 2) {
+								$roll = "Director de carrera";
+							}else{
+								$roll = "Profesor";
+							}
+							$table.= "<tr><td>".$nom->cedula."</td><td>".$nom->nombre."</td><td>".$nom->primerapellido."</td><td>".$nom->segundoapellido."</td><td>".$nom->nombreusuario."</td><td>".$roll."</td>";
+							$table.="<td><button type=\"submit\" name=\"editar\" value=\"$nom->id\" class=\"editar btn btn-default\">Editar</button></td><td>      <button type=\"submit\" name=\"eliminar\" value=\"$nom->id\" class=\"eliminar btn btn-default\">Eliminar</button></td></tr>";
 						}
-						$table.="</table>";
+						$table.="</table>";	
 					echo $table;
-					?>
+				?>				
 			</div>	
 		</div>
 	</div>
