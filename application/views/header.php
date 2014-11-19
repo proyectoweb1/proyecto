@@ -17,7 +17,7 @@
 				</div>
 				<div class="nav navbar-nav navbar-left">
 					<li><a href="#">Dashboard</a></li>
-					<li><a href="#" class="hover">Carreras</a></li>
+					<li><a href="<?php echo base_url("index.php/Carreras/");?>">Carreras</a></li>
 					<li><a href="#">Estudiantes</a></li>
 					<li><a href="<?php echo base_url("index.php/Usuario/getall");?>">Usuarios</a></li>
 					<li><a href="<?php echo base_url("index.php/Role/");?>">Role</a></li>
