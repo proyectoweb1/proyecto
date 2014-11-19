@@ -65,11 +65,11 @@
 			var id = $(this).data('id');
 			$.ajax({
 					type:'POST',
-					url:'http://localhost:81/proyecto/index.php/Tecnologia/delete',
+					url:'<?php echo base_url("index.php/Tecnologia/delete");?>',
 					async: true,
 					data: { id : id },
 					complete:function () {
-						window.location.href = "http://localhost:81/proyecto/index.php/Tecnologia/";
+						window.location.href = "<?php echo base_url('index.php/Tecnologia/');?>";
 						
                         }, error:function (error) {
                         	alert("Error al eliminar"+id);
