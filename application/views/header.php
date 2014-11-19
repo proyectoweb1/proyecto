@@ -20,8 +20,8 @@
 					<li><a href="#" class="hover">Carreras</a></li>
 					<li><a href="#">Estudiantes</a></li>
 					<li><a href="<?php echo base_url("index.php/Usuario/getall");?>">Usuarios</a></li>
-					<li><a href="<?php echo base_url("index.phpRole/");?>">Role</a></li>
-					<li><a href="<?php echo base_url("index.phpCualidad/");?>">Cualidad</a></li>
+					<li><a href="<?php echo base_url("index.php/Role/");?>">Role</a></li>
+					<li><a href="<?php echo base_url("index.php/Cualidad/");?>">Cualidad</a></li>
 					<li><a href="<?php echo base_url("index.php/Tecnologia/");?>">Tecnologia</a></li>
 					<li><a href="<?php echo base_url("index.php/Proyecto/");?>">Proyectos</a></li>
 					<li><a href="<?php echo base_url("index.php/Cursos/");?>">Cursos</a></li>
