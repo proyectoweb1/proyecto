@@ -5,29 +5,68 @@ class Usuario extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-	}
-
-	function getall()
-	{
-		$this->load->view('header');
 		$this->load->model('Usuarios_model');
 		$this->load->model('role_model');
+	}
+
+
+	function Control()//funcion para control de eventos del form
+	{
+		if (isset($_POST["agregar"])){
+			$this->Create();				
+		}elseif (isset($_POST["eliminar"])) {
+			$this->Delete();
+		}elseif (isset($_POST["editar"])) {
+			$this->toupdate();
+		}	
+	}
+	function index()
+	{
 		$query['role'] = $this->role_model->getAll();
 		$query['name'] = $this->Usuarios_model->getAll();
-		$this->load->view('formusuarios', $query);
+		$this->load->view('header');
+		$this->load->view('Usuarios/formusuarios', $query);
 	}
 	function Create()
 	{
+		$cedula = $this->input->post('cedula');
 		$nombre = $this->input->post('username');
-		$apellido = $this->input->post('lastname');
-		$email = $this->input->post('email');
+		$primerapellido = $this->input->post('primerapellido');
+		$segundoapellido = $this->input->post('segundoapellido');
+		$NickName = $this->input->post('NickName');
+		$role_id = $this->input->post("roles");
 		$data = array(
-		   'nombre' => $nombre ,
-		   'apellido' => $apellido ,
-		   'correo' => $email
-		);
-		$this->load->model('Usuarios_model');
+			'cedula' => $cedula ,
+			'nombre' => $nombre ,
+			'primerapellido' => $primerapellido,
+			'segundoapellido' => $segundoapellido,
+			'nombreusuario' => $NickName,
+			'role_id' => $role_id
+			);
 		$this->Usuarios_model->insert($data);
 	}
+	function delete()
+	{
+		$id = $this->input->post('eliminar');//eliminar es el id de select
+		$this->Usuarios_model->delete($id);		
+	}
+	function toupdate(){  //de mas
+		$id = $this->input->post('editar');
+		$query['usuario'] = $this->Usuarios_model->getuser($id);			
+		$this->load->view('header');
+		$this->load->view('Usuarios/formusuarioseditar', $query);
+	}
+	function update(){  //de mas
+		echo "ENTROOOOOOOOOOOOOO";
+		$id = $this->input->post('id');
+		$tecnologia = $this->input->post('nombre');
+		$data = array(
+			'nombre'=>$tecnologia
+			);
+		$this->usuarios_model->update($id,$data);
+		//redirect('Tecnologia/index', 'refresh');
+	}	
 }
 ?>
+
+
