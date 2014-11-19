@@ -14,3 +14,5 @@ $ git push -u origin master
 //jalar los datos
 Sly_PC@SLY_PC-PC /c/xampp/htdocs/proyecto (master)
 $ git pull
+proyectoweb1 usuario
+clave Proyecto123
