@@ -115,11 +115,11 @@
 			var id = $(this).data('id');
 			$.ajax({
 					type:'POST',
-					url:'http://localhost:81/proyecto/index.php/Proyecto/delete',
+					url:'<?php echo base_url("index.php/Proyecto/delete");?>',
 					async: true,
 					data: { id : id },
 					complete:function () {
-						window.location.href = "http://localhost:81/proyecto/index.php/Proyecto/";
+						window.location.href = "<?php echo base_url('index.php/Proyecto/delete');?>";
 
                         }, error:function (error) {
                         	alert("Error al eliminar"+id);
