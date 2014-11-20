@@ -48,8 +48,9 @@ class Carreras extends CI_Controller
 	{
 		if($this->input->is_ajax_request() && $this->input->post('id')){
 			$id = $this->input->post('id');
-			$this->Role_model->delete($id);
+			$this->Carrera_model->delete($id);
 		}
+		
 	}
 }
 ?>
