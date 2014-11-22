@@ -37,15 +37,15 @@ class Proyecto extends CI_Controller
 			$fecha = $this->input->post('fecha');
 			$calificacion = $this->input->post('calificacion');
 			$data = array(
-			   'curso' => $curso,
+			   'fecha' => $fecha,
 			   'duracion' => $duracion,
 			   'descripcion' => $descripcion,
-			   'fecha' => $fecha,
+			   'curso_id' => $curso,
 			   'calificacion'=>$calificacion
 			);
 			//se manda el array al modelo para insertar 
 			$this->Proyecto_model->insert($data);
-			redirect('Proyecto/index', 'refresh');
+			//redirect('Proyecto/index', 'refresh');
 		}
 	}
 	function toupdate(){
@@ -74,10 +74,10 @@ class Proyecto extends CI_Controller
 			$fecha = $this->input->post('fecha');
 			$calificacion = $this->input->post('calificacion');
 			$data = array(
-			   'curso' => $curso,
+			   'fecha' => $fecha,
 			   'duracion' => $duracion,
 			   'descripcion' => $descripcion,
-			   'fecha' => $fecha,
+			   'curso_id' => $curso,
 			   'calificacion'=>$calificacion
 			);
 			$this->Proyecto_model->update($id,$data);

@@ -13,7 +13,7 @@ class Proyecto_model extends CI_Model
 	}
 	function insert($data)
 	{
-		$this->db->insert('proyecto',$data);
+        $this->db->insert('proyecto',$data);
 	}
 	function update($id,$data){
         $this->db->where('id',$id);
