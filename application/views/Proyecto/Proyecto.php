@@ -119,7 +119,7 @@
 					async: true,
 					data: { id : id },
 					complete:function () {
-						window.location.href = "<?php echo base_url('index.php/Proyecto/delete');?>";
+						window.location.href = "<?php echo base_url('index.php/Proyecto/index');?>";
 
                         }, error:function (error) {
                         	alert("Error al eliminar"+id);

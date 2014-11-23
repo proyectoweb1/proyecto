@@ -45,7 +45,7 @@ class Proyecto extends CI_Controller
 			);
 			//se manda el array al modelo para insertar 
 			$this->Proyecto_model->insert($data);
-			//redirect('Proyecto/index', 'refresh');
+			redirect('Proyecto/index', 'refresh');
 		}
 	}
 	function toupdate(){
@@ -56,6 +56,7 @@ class Proyecto extends CI_Controller
 		$this->load->view('Proyecto/ProyectoUpdate', $query);
 	}
 	function update(){
+		var_dump($this->input->post('curso'));die;
 		$this->form_validation->set_rules('cursos', 'Cursos', 'required');
 		$this->form_validation->set_rules('duracion', 'Duracion', 'required');
 		$this->form_validation->set_rules('descripcion', 'Descripcion', 'required');
