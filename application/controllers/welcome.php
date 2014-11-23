@@ -19,7 +19,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+<<<<<<< HEAD
 		$this->load->view('header');
+=======
+>>>>>>> caeb5620a7501377d06ab1386ce1d2d05013e87b
 		$this->load->view('Dashboard/Inicio');
 	}
 }
