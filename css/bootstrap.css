@@ -10,6 +10,7 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
 }
@@ -6200,4 +6201,26 @@ button.close {
     display: none !important;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
+body{
+    background-image: url("http://wallpapers.org.es/wp-content/uploads/2012/10/wallpapers_azules-1024x640.jpeg"); background-repeat: no-repeat;
+   -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+      background-size: cover;
+}
+#imgestudiante{
+position: relative; left: 200px; top: -70px;
+width: 100px;
+}
+#imgcarreras,
+#imgestudiantes,
+#imgextencion{
+
+  margin: 25px;
+  padding: 20px;
+}
+#confimg{ 
+text-align: center;
+}  
+
+/*# sourceMappingURL=bootstrap.css.map    background-size: 1500px 1000px;     */

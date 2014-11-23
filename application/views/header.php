@@ -12,11 +12,11 @@
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<ul class="nav navbar-nav">
-						<li><a href="http://utn.ac.cr/">UTN</a></li>
+						<li><a href="http://utn.ac.cr/">UTN</a></li>	
 					</ul>
 				</div>
 				<div class="nav navbar-nav navbar-left">
-					<li><a href="#">Dashboard</a></li>
+					<li><a href="<?php echo base_url("");?>">Dashboard</a></li>
 					<li><a href="<?php echo base_url("index.php/Carreras/index");?>">Carreras</a></li>
 					<li><a href="#">Estudiantes</a></li>
 					<li><a href="<?php echo	base_url("index.php/Usuario/index")?>">Usuarios</a></li>
@@ -29,5 +29,10 @@
 				</div>
 			</div>
 	</nav>
+	<div id="confimg">
+	<img id="imgextencion" src="http://www.utn.ac.cr/images/extension.png">
+    <img id="imgcarreras"src="http://www.utn.ac.cr/images/carreras.png">
+    <img id="imgestudiantes"src="http://www.utn.ac.cr/images/estudiantes.png">
+</div>
 </body>
 </html>
