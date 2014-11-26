@@ -59,7 +59,7 @@
 
 		$( ".editar" ).click(function() {
 	    	var id = $(this).data('id');
-			window.location.href = "toupdate/?uid=" + id;
+			window.location.href = "toupdate/" + id;
 		});
 
 		$(".eliminar").click(function(){
@@ -69,10 +69,10 @@
 					url:'<?php echo base_url("index.php/Cualidad/delete");?>',
 					async: true,
 					data: { id : id },
-					sussess:function () {
+					complete:function () {
 						window.location.href = "<?php echo base_url('index.php/Cualidad/index');?>";
 
-                        }, error:function (error) {
+                        }, ajaxError:function (error) {
                         	alert("Error al eliminar"+id);
                         }
 
