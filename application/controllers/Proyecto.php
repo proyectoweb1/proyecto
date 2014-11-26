@@ -56,7 +56,6 @@ class Proyecto extends CI_Controller
 		$this->load->view('Proyecto/ProyectoUpdate', $query);
 	}
 	function update(){
-		var_dump($this->input->post('curso'));die;
 		$this->form_validation->set_rules('cursos', 'Cursos', 'required');
 		$this->form_validation->set_rules('duracion', 'Duracion', 'required');
 		$this->form_validation->set_rules('descripcion', 'Descripcion', 'required');
@@ -69,7 +68,7 @@ class Proyecto extends CI_Controller
 			echo validation_errors();
 		}else{
 			$id = $this->input->post('id');
-			$curso = $this->input->post('curso');
+			$curso = $this->input->post('cursos');
 			$duracion = $this->input->post('duracion');
 			$descripcion = $this->input->post('descripcion');
 			$fecha = $this->input->post('fecha');

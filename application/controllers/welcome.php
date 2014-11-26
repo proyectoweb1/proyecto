@@ -10,15 +10,10 @@ function __construct()
 	
 	public function index()
 	{
-<<<<<<< HEAD
         $query['carrera'] = $this->Carrera_model->getAll();
        		$this->load->view('header');
        		$this->load->view('microchat/index');
 		$this->load->view('Dashboard/Inicio',$query);
-=======
-		$this->load->view('header');
-		$this->load->view('Dashboard/Inicio');
->>>>>>> b4fc2da6e066f37021d3d2c5afc78a861fd3a95e
 	}
 	
 }
