@@ -31,7 +31,7 @@ class Carreras extends CI_Controller
 
 		);
 		$this->Carrera_model->insert($data);
-		redirect('carreras/', 'refresh');
+		redirect('Carreras/index', 'refresh');
 	}
 	function update(){
 		$id = $this->input->post('id');
@@ -48,8 +48,11 @@ class Carreras extends CI_Controller
 	{
 		if($this->input->is_ajax_request() && $this->input->post('id')){
 			$id = $this->input->post('id');
-			$this->Role_model->delete($id);
+			$this->Carrera_model->delete($id);
 		}
+		
 	}
+
+	
 }
 ?>

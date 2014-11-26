@@ -39,7 +39,6 @@ class Tecnologia extends CI_Controller
 	{
 		if($this->input->is_ajax_request() && $this->input->post('id')){
 			$id = $this->input->post('id');
-			//var_dump($id);
 			$this->Tecnologia_model->delete($id);
 		}
 		

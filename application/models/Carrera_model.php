@@ -19,10 +19,10 @@ class Carrera_model extends CI_Model
         $this->db->where('id',$id);
         $this->db->update('carrera',$data);
     }
-    function delete($id){
-        $this->db->where('id', $id);
-        $this->db->delete('carrera');
-    }
+   function delete($id){
+    $this->db->where('id', $id);
+    $this->db->delete('carrera');
+}
     function getid($id){
     	$this->db->where('id', $id);
         $query = $this->db->get('carrera');

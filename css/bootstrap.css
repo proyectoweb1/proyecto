@@ -10,6 +10,7 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
 }
@@ -6200,6 +6201,7 @@ button.close {
     display: none !important;
   }
 }
+<<<<<<< HEAD
 /*aumenta tamaño de letra de pag inicio*/
 footer{
     font-family:"Trebuchet MS";
@@ -6218,3 +6220,36 @@ footer{
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
+=======
+/*body{
+    background-image: url("http://wallpapers.org.es/wp-content/uploads/2012/10/wallpapers_azules-1024x640.jpeg"); background-repeat: no-repeat;
+   -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+      background-size: cover;
+}*/
+#imgestudiante{
+position: relative; left: 200px; top: -70px;
+width: 100px;
+}
+#imgcarreras,
+#imgestudiantes,
+#imgextencion{
+
+  margin: 25px;
+  padding: 20px;
+}
+#confimg{ 
+text-align: center;
+}  
+#piechart{
+position: relative; left: 500px; top: -500px;
+}
+#barragoogle{
+position: relative; left: 50px; top: -550px;
+}
+#TT_RiJ11kEkkddB18IAKAuDjjjzjWlAMh2lLt1t1ZiIK1zomo35G{
+  position: relative; left: 500px; top: -550px;
+}
+/*# sourceMappingURL=bootstrap.css.map    background-size: 1500px 1000px;     */
+>>>>>>> b3d6df05998c9daf4fb01a80eacab6f449eff6c5

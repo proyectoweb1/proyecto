@@ -37,10 +37,10 @@ class Proyecto extends CI_Controller
 			$fecha = $this->input->post('fecha');
 			$calificacion = $this->input->post('calificacion');
 			$data = array(
-			   'curso' => $curso,
+			   'fecha' => $fecha,
 			   'duracion' => $duracion,
 			   'descripcion' => $descripcion,
-			   'fecha' => $fecha,
+			   'curso_id' => $curso,
 			   'calificacion'=>$calificacion
 			);
 			//se manda el array al modelo para insertar 
@@ -68,16 +68,16 @@ class Proyecto extends CI_Controller
 			echo validation_errors();
 		}else{
 			$id = $this->input->post('id');
-			$curso = $this->input->post('curso');
+			$curso = $this->input->post('cursos');
 			$duracion = $this->input->post('duracion');
 			$descripcion = $this->input->post('descripcion');
 			$fecha = $this->input->post('fecha');
 			$calificacion = $this->input->post('calificacion');
 			$data = array(
-			   'curso' => $curso,
+			   'fecha' => $fecha,
 			   'duracion' => $duracion,
 			   'descripcion' => $descripcion,
-			   'fecha' => $fecha,
+			   'curso_id' => $curso,
 			   'calificacion'=>$calificacion
 			);
 			$this->Proyecto_model->update($id,$data);
