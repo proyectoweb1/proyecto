@@ -69,7 +69,7 @@
 					url:'<?php echo base_url("index.php/Cualidad/delete");?>',
 					async: true,
 					data: { id : id },
-					complete:function () {
+					sussess:function () {
 						window.location.href = "<?php echo base_url('index.php/Cualidad/index');?>";
 
                         }, error:function (error) {

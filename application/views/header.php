@@ -19,20 +19,12 @@
 					<li><a href="<?php echo base_url("");?>">Dashboard</a></li>
 					<li><a href="<?php echo base_url("index.php/Carreras/index");?>">Carreras</a></li>
 					<li><a href="#">Estudiantes</a></li>
-<<<<<<< HEAD
-					<li><a href="<?php echo	base_url("index.php/Usuario/")?>">Usuarios</a></li>					
-					<li><a href="<?php echo	base_url("index.php/Cualidad/")?>">Cualidad</a></li>
-					<li><a href="<?php echo	base_url("index.php/Tecnologia/")?>">Tecnologia</a></li>
-					<li><a href="<?php echo	base_url("index.php/Proyecto/")?>">Proyectos</a></li>
-					<li><a href="<?php echo	base_url("index.php/Cursos/")?>">Cursos</a></li>
-=======
 					<li><a href="<?php echo	base_url("index.php/Usuario/index")?>">Usuarios</a></li>
 					<li><a href="<?php echo	base_url("index.php/Role/index")?>">Role</a></li>
 					<li><a href="<?php echo	base_url("index.php/Cualidad/index")?>">Cualidad</a></li>
 					<li><a href="<?php echo	base_url("index.php/Tecnologia/index")?>">Tecnologia</a></li>
 					<li><a href="<?php echo	base_url("index.php/Proyecto/index")?>">Proyectos</a></li>
 					<li><a href="<?php echo	base_url("index.php/Cursos/index")?>">Cursos</a></li>
->>>>>>> b3d6df05998c9daf4fb01a80eacab6f449eff6c5
 					<li><a href="#">Cerrar Sesion</a></li>
 				</div>
 			</div>
