@@ -52,5 +52,7 @@ class Carreras extends CI_Controller
 		}
 		
 	}
+
+	
 }
 ?>
