@@ -20,7 +20,6 @@
 					<li><a href="<?php echo base_url("index.php/Carreras/index");?>">Carreras</a></li>
 					<li><a href="#">Estudiantes</a></li>
 					<li><a href="<?php echo	base_url("index.php/Usuario/index")?>">Usuarios</a></li>
-					<li><a href="<?php echo	base_url("index.php/Role/index")?>">Role</a></li>
 					<li><a href="<?php echo	base_url("index.php/Cualidad/index")?>">Cualidad</a></li>
 					<li><a href="<?php echo	base_url("index.php/Tecnologia/index")?>">Tecnologia</a></li>
 					<li><a href="<?php echo	base_url("index.php/Proyecto/index")?>">Proyectos</a></li>
