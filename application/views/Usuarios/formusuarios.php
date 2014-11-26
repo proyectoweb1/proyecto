@@ -67,6 +67,18 @@
 			</div>		
 			<div class="form-group">
 				<?php
+				$password = array(
+		              'name'        => 'password',
+		              'id'          => 'password',
+		              'maxlength'   => '100',
+		              'placeholder' => 'Password',
+		              'class'		=> 'form-control',
+		            );
+			echo form_input($password);
+				?>
+			</div>	
+			<div class="form-group">
+				<?php
 				$dropdown_role = "<select class=\"btn btn-default dropdown-toggle\" name=\"roles\">";
 					foreach ($role as $rol) {
 						$dropdown_role.="<option value=\"$rol->id\">$rol->nombre</option>";
@@ -112,8 +124,4 @@
 		</div>
 	</div>
 </div>
-		<footer>
-        	<p>UTN 2014, todos los derechos reservados &copy;</p>
-        </footer>
-
 </body>
