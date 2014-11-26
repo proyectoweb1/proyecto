@@ -57,13 +57,20 @@ class Usuario extends CI_Controller {
 		$this->load->view('Usuarios/formusuarioseditar', $query);
 	}
 	function update(){  //de mas
-		echo "ENTROOOOOOOOOOOOOO";
-		$id = $this->input->post('id');
-		$tecnologia = $this->input->post('nombre');
+		$id = $this->input->post('button');
+		$cedula = $this->input->post('cedula');
+		$username = $this->input->post('username');
+		$primerapellido = $this->input->post('primerapellido');
+		$segundoapellido = $this->input->post('segundoapellido');
+		$NickName = $this->input->post('NickName');
 		$data = array(
-			'nombre'=>$tecnologia
-			);
-		$this->usuarios_model->update($id,$data);
+			'cedula'=>$cedula,
+			'nombre'=>$username,
+			'primerapellido'=>$primerapellido,
+			'segundoapellido'=>$segundoapellido,
+			'nombreusuario'=>$NickName,
+			);	
+		$this->Usuarios_model->update($id,$data);
 		//redirect('Tecnologia/index', 'refresh');
 	}	
 }

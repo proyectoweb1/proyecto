@@ -84,10 +84,10 @@
 				<?php
 					$data = array(
 					    'name' => 'button',
-					    'id' => 'button',
 					    'type' => 'submit',
 					    'class' => 'btn btn-default',
-					    'content' => 'Actualizar'
+					    'content' => 'Actualizar',
+					     'value' => $usuario->id
 					);
 					echo form_button($data);
 				?>

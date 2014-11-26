@@ -1,0 +1,5 @@
+color de texto head
+
+.navbar-inverse .navbar-text {
+  color: #777;
+}

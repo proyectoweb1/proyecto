@@ -47,8 +47,10 @@ class Usuarios_model extends CI_Model
 	}
 
 	function update($id,$data){  // de mas
+		//var_dump($data);
 		$this->db->where('id',$id);
 		$this->db->update('usuario',$data);
+		header('Location: /index.php/Usuario');	
 	}
 
 }

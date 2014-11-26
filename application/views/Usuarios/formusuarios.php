@@ -112,5 +112,8 @@
 		</div>
 	</div>
 </div>
-</div>
+		<footer>
+        	<p>UTN 2014, todos los derechos reservados &copy;</p>
+        </footer>
+
 </body>
