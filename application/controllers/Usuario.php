@@ -35,7 +35,6 @@ class Usuario extends CI_Controller {
 		$segundoapellido = $this->input->post('segundoapellido');
 		$NickName = $this->input->post('NickName');
 		$password = md5 ($this->input->post('password'));
-		//$contrasena =  md5 ( $contrasena ); 
 		$role_id = $this->input->post("roles");
 		$data = array(
 			'cedula' => $cedula ,
@@ -65,12 +64,14 @@ class Usuario extends CI_Controller {
 		$username = $this->input->post('username');
 		$primerapellido = $this->input->post('primerapellido');
 		$segundoapellido = $this->input->post('segundoapellido');
+		$password = md5 ($this->input->post('password'));
 		$NickName = $this->input->post('NickName');
 		$data = array(
 			'cedula'=>$cedula,
 			'nombre'=>$username,
 			'primerapellido'=>$primerapellido,
 			'segundoapellido'=>$segundoapellido,
+			'password'=>$password,
 			'nombreusuario'=>$NickName,
 			);	
 		$this->Usuarios_model->update($id,$data);

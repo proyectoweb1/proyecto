@@ -70,6 +70,7 @@
 				$password = array(
 		              'name'        => 'password',
 		              'id'          => 'password',
+		              'type'		=> 'password',
 		              'maxlength'   => '100',
 		              'placeholder' => 'Password',
 		              'class'		=> 'form-control',

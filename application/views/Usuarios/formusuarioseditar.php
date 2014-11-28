@@ -69,7 +69,19 @@
 		            );
 				echo form_input($username);
 				?>
-			</div>		
+			</div>
+			<?php
+				$password = array(
+		              'name'        => 'password',
+		              'id'          => 'password',
+		              'type'		=> 'password',
+		              'maxlength'   => '100',
+		              'placeholder' => 'Password',
+		              'class'		=> 'form-control',
+		              'value'	=>  $usuario->password
+		            );
+			echo form_input($password);
+				?>		
 			<div class="form-group">
 				<?php
 				// $dropdown_role = "<select class=\"btn btn-default dropdown-toggle\" name=\"roles\">";

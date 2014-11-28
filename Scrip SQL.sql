@@ -318,7 +318,7 @@ CREATE TABLE `usuario` (
   `primerapellido` varchar(45) NOT NULL,
   `segundoapellido` varchar(45) NOT NULL,
   `nombreusuario` varchar(45) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `role_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `role_user_idx` (`role_id`),
