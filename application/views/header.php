@@ -18,7 +18,7 @@
 				<div class="nav navbar-nav navbar-left">
 					<li><a href="<?php echo base_url("");?>">Dashboard</a></li>
 					<li><a href="<?php echo base_url("index.php/Carreras/index");?>">Carreras</a></li>
-					<li><a href="#">Estudiantes</a></li>
+					<li><a href="<?php echo base_url("index.php/Estudiantes/index");?>">Estudiantes</a></li>
 					<li><a href="<?php echo	base_url("index.php/Usuario/index")?>">Usuarios</a></li>
 					<li><a href="<?php echo	base_url("index.php/Cualidad/index")?>">Cualidad</a></li>
 					<li><a href="<?php echo	base_url("index.php/Tecnologia/index")?>">Tecnologia</a></li>

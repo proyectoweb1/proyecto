@@ -14,6 +14,7 @@ class Proyecto_model extends CI_Model
 	function insert($data)
 	{
         $this->db->insert('proyecto',$data);
+        return $this->db->insert_id();
 	}
 	function update($id,$data){
         $this->db->where('id',$id);
@@ -31,6 +32,10 @@ class Proyecto_model extends CI_Model
         } else {
             return null;
         }
+    }
+    function insertProtecnology($data)
+    {
+        $this->db->insert('proyecto_tecnologia',$data);
     }
 }
 ?>

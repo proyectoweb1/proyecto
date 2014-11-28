@@ -7,15 +7,18 @@ class Proyecto extends CI_Controller
 		parent::__construct();
 		$this->load->model('Curso_model');
 		$this->load->model('Proyecto_model');
+		$this->load->model('Tecnologia_model');
 	}
 	function index(){
 		$query['proyecto'] = $this->Proyecto_model->getall();
 		$query['curso'] = $this->Curso_model->getall();
+		$query['tecnologia'] = $this->Tecnologia_model->getall();
 		$this->load->view('header');
 		$this->load->view('Proyecto/Proyecto',$query);
 	}
 	function create()
 	{
+		//var_dump($this->input->post('tecnologia'));die;
 		//reglas de validacion para los campos
 		$this->form_validation->set_rules('cursos', 'Cursos', 'required');
 		$this->form_validation->set_rules('duracion', 'Duracion', 'required');
@@ -44,7 +47,15 @@ class Proyecto extends CI_Controller
 			   'calificacion'=>$calificacion
 			);
 			//se manda el array al modelo para insertar 
-			$this->Proyecto_model->insert($data);
+			$dato = $this->Proyecto_model->insert($data);
+			$tecno = $this->input->post('tecnologia');
+			foreach ($tecno as $tec) {
+				$data = array(
+				   'proyecto_id' => $dato,
+				   'tecnologia_id' => $tec
+				);
+				$this->Proyecto_model->insertProtecnology($data);
+			}
 			redirect('Proyecto/index', 'refresh');
 		}
 	}
