@@ -34,6 +34,7 @@ class Usuario extends CI_Controller {
 		$primerapellido = $this->input->post('primerapellido');
 		$segundoapellido = $this->input->post('segundoapellido');
 		$NickName = $this->input->post('NickName');
+		$password = md5 ($this->input->post('password'));
 		$role_id = $this->input->post("roles");
 		$data = array(
 			'cedula' => $cedula ,
@@ -41,6 +42,7 @@ class Usuario extends CI_Controller {
 			'primerapellido' => $primerapellido,
 			'segundoapellido' => $segundoapellido,
 			'nombreusuario' => $NickName,
+			'password' => $password,
 			'role_id' => $role_id
 			);
 		$this->Usuarios_model->insert($data);
@@ -57,13 +59,22 @@ class Usuario extends CI_Controller {
 		$this->load->view('Usuarios/formusuarioseditar', $query);
 	}
 	function update(){  //de mas
-		echo "ENTROOOOOOOOOOOOOO";
-		$id = $this->input->post('id');
-		$tecnologia = $this->input->post('nombre');
+		$id = $this->input->post('button');
+		$cedula = $this->input->post('cedula');
+		$username = $this->input->post('username');
+		$primerapellido = $this->input->post('primerapellido');
+		$segundoapellido = $this->input->post('segundoapellido');
+		$password = md5 ($this->input->post('password'));
+		$NickName = $this->input->post('NickName');
 		$data = array(
-			'nombre'=>$tecnologia
-			);
-		$this->usuarios_model->update($id,$data);
+			'cedula'=>$cedula,
+			'nombre'=>$username,
+			'primerapellido'=>$primerapellido,
+			'segundoapellido'=>$segundoapellido,
+			'password'=>$password,
+			'nombreusuario'=>$NickName,
+			);	
+		$this->Usuarios_model->update($id,$data);
 		//redirect('Tecnologia/index', 'refresh');
 	}	
 }

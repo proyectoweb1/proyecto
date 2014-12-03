@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UTN| Proyecto</title>
+	<title>UTN | Proyecto</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("css/bootstrap.css");?>">
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url("js/bootstrap.js");?>"></script>
@@ -18,9 +18,8 @@
 				<div class="nav navbar-nav navbar-left">
 					<li><a href="<?php echo base_url("");?>">Dashboard</a></li>
 					<li><a href="<?php echo base_url("index.php/Carreras/index");?>">Carreras</a></li>
-					<li><a href="#">Estudiantes</a></li>
+					<li><a href="<?php echo base_url("index.php/Estudiantes/index");?>">Estudiantes</a></li>
 					<li><a href="<?php echo	base_url("index.php/Usuario/index")?>">Usuarios</a></li>
-					<li><a href="<?php echo	base_url("index.php/Role/index")?>">Role</a></li>
 					<li><a href="<?php echo	base_url("index.php/Cualidad/index")?>">Cualidad</a></li>
 					<li><a href="<?php echo	base_url("index.php/Tecnologia/index")?>">Tecnologia</a></li>
 					<li><a href="<?php echo	base_url("index.php/Proyecto/index")?>">Proyectos</a></li>

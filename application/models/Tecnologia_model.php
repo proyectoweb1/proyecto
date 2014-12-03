@@ -9,13 +9,7 @@ class Tecnologia_model extends CI_Model
     {
       $query = $this->db->get('tecnologia');
       return $query->result();
-        // $this->db->select('id','nombre');
-        // $this->db->from('role');
-        // $this->db->order_by('name','asc');
-        // $consulta = $this->db->get();
-        // $resultado = $consulta->result();
-        // return $resultado;
-  }
+    }
   function insert($data)
   {
       $this->db->insert('tecnologia',$data);

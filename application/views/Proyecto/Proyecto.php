@@ -68,6 +68,15 @@
 				            echo form_input($calificacion);
 			            ?>
 					</div>
+					<div class="form-group">
+						<?php
+							$tecnologias="";
+							foreach ($tecnologia as $tecno) {
+								$tecnologias .="<input type=\"checkbox\"  id=\"$tecno->id\" name=\"tecnologia[]\" value=\"$tecno->id\" />$tecno->nombre";
+							}
+							echo $tecnologias;
+						?>
+					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="col-md-4"></div>

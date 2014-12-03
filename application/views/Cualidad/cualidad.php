@@ -59,20 +59,20 @@
 
 		$( ".editar" ).click(function() {
 	    	var id = $(this).data('id');
-			window.location.href = "toupdate/?uid=" + id;
+			window.location.href = "toupdate/" + id;
 		});
 
 		$(".eliminar").click(function(){
 			var id = $(this).data('id');
 			$.ajax({
 					type:'POST',
-					url:'http://localhost:81/proyecto/index.php/Cualidad/delete',
+					url:'<?php echo base_url("index.php/Cualidad/delete");?>',
 					async: true,
 					data: { id : id },
 					complete:function () {
-						window.location.href = "http://localhost:81/proyecto/index.php/Cualidad/";
-						
-                        }, error:function (error) {
+						window.location.href = "<?php echo base_url('index.php/Cualidad/index');?>";
+
+                        }, ajaxError:function (error) {
                         	alert("Error al eliminar"+id);
                         }
 

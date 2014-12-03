@@ -43,7 +43,7 @@
 				<div class="col-md-9">
 				<h4>Cursos actuales.</h4>
 					<?php
-					$table = "<table id=\"table\" class=\"table table-bordered\"><tr><th>Nombre Cualidad</th><th>Editar</th><th>Eliminar</th></tr>";
+					$table = "<table id=\"table\" class=\"table table-bordered\"><tr><th>Nombre Curso</th><th>Editar</th><th>Eliminar</th></tr>";
 						foreach ($curso as $data) {
 							$table.= "<tr><td>".$data->nombre."</td>";
 							$table.="<td><button type=\"button\" data-id=\"$data->id\" class=\"editar btn btn-default\">Editar</button></td><td><button type=\"button\" data-id=\"$data->id\" class=\"eliminar btn btn-default\">Eliminar</button></td></tr>";
