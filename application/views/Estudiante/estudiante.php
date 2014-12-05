@@ -21,6 +21,30 @@
 					</div>
 					<div class="form-group">
 						<?php
+							$primerapellido = array(
+				              'name'        => 'primerapellido',
+				              'id'          => 'primerapellido_id',
+				              'maxlength'   => '100',
+				              'placeholder' => 'apellido1',
+				              'class'		=> 'form-control',
+				            );
+				            echo form_input($primerapellido);
+			            ?>
+					</div>
+					<div class="form-group">
+						<?php
+							$segundoapellido = array(
+				              'name'        => 'segundoapellido',
+				              'id'          => 'segundoapellido_id',
+				              'maxlength'   => '100',
+				              'placeholder' => 'apellido2',
+				              'class'		=> 'form-control',
+				            );
+				            echo form_input($segundoapellido);
+			            ?>
+					</div>
+					<div class="form-group">
+						<?php
 							$cedula = array(
 				              'name'        => 'cedula',
 				              'id'          => 'cedula_id',
@@ -62,7 +86,7 @@
 						<?php
 							$cualidades="";
 							foreach ($cualidad as $cuali) {
-								$cualidades .="<input type=\"checkbox\"  id=\"$cuali->id\" name=\"cualidad[]\" value=\"$cuali->id\" />$cuali->nombre";
+								$cualidades .="<input type=\"checkbox\"  id=\"$cuali->id\" name=\"cualidad[]\" value=\"$cuali->id\" />$cuali->nombre<br>";
 							}
 							echo $cualidades;
 						?>
@@ -76,7 +100,7 @@
 						<?php
 							$proyecto="";
 							foreach ($proyectos as $pro) {
-								$proyecto .="<input type=\"checkbox\"  id=\"$pro->id\" name=\"proyecto[]\" value=\"$pro->id\" />$pro->descripcion";
+								$proyecto .="<input type=\"checkbox\"  id=\"$pro->id\" name=\"proyecto[]\" value=\"$pro->id\" />$pro->descripcion<br>";
 							}
 							echo $proyecto;
 						?>

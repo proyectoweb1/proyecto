@@ -23,16 +23,39 @@ class Estudiantes extends CI_Controller
 	}
 		function create()
 	{
-		var_dump($_POST);die;
-		$codigo = $this->input->post('codigo');
+		$cedula = $this->input->post('cedula');
 		$nombre = $this->input->post('nombre');
+		$primerapellido = $this->input->post('primerapellido');
+		$segundoapellido = $this->input->post('segundoapellido');
+		$foto = $this->input->post('foto');
 		$data = array(
-		   'codigo' => $codigo,
-		   'nombre' => $nombre
+			'cedula' => $cedula,
+		   'nombre' => $nombre,
+		   'primerapellido' => $primerapellido,
+		   'segundoapellido' => $segundoapellido,
+		   'foto' => $foto,
 
 		);
 		$this->Estudiante_model->insert($data);
-		redirect('Carreras/index', 'refresh');
+		$cualidad = $this->input->post('cualidad');
+		$id = $this->input->post('cedula');
+		foreach ($cualidad as $data) {
+            $data2 = array(
+			'cualidad' => $cualidad,
+			'id' => $cedula,		  
+		);
+        }
+       
+		$this->Estudiante_model->insertcualidad($data2);
+		$carrera = $this->input->post('cursos');
+		$cualidad = $this->input->post('cualidad');
+		 $data2 = array(
+			'carrera_id' => $carrera,
+			'id' => $cedula,		  
+		);
+		$this->Estudiante_model->insertcarrera($data2);
+		
+		redirect('Estudiantes/index', 'refresh');
 	}
 	function toupdate(){
 		$id = $this->input->get("uid");
