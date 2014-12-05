@@ -59,7 +59,7 @@
 
 		$( ".editar" ).click(function() {
 	    	var id = $(this).data('id');
-			window.location.href = "toupdate/?uid=" + id;
+			window.location.href = "toupdate/" + id;
 		});
 
 		$(".eliminar").click(function(){

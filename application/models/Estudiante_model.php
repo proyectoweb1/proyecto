@@ -14,14 +14,19 @@ class Estudiante_model extends CI_Model
 	function insert($data)
 	{
 		$this->db->insert('estudiante',$data);
+        return $this->db->insert_id();
 	}
-    function insertcarrera($data)
+    function insertcarrera($insertCarrera)
     {
-        $this->db->insert('estudiante_carrera',$data);
+        $this->db->insert('estudiante_carrera',$insertCarrera);
     }
-    function insertcualidad($data)
+    function insertcualidad($dato)
     {
-        $this->db->insert('estudiante_cualidad',$data);
+        $this->db->insert('estudiante_cualidad',$dato);
+    }
+    function insertproyecto($insert)
+    {
+        $this->db->insert('estudiante_proyecto',$insert);
     }
 	function update($id,$data){
         $this->db->where('id',$id);

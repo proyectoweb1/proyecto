@@ -21,58 +21,109 @@ class Estudiantes extends CI_Controller
 		$this->load->view('header');
 		$this->load->view('Estudiante/estudiante',$query);
 	}
-		function create()
+	function create()
 	{
-		$cedula = $this->input->post('cedula');
-		$nombre = $this->input->post('nombre');
-		$primerapellido = $this->input->post('primerapellido');
-		$segundoapellido = $this->input->post('segundoapellido');
-		$foto = $this->input->post('foto');
-		$data = array(
-			'cedula' => $cedula,
-		   'nombre' => $nombre,
-		   'primerapellido' => $primerapellido,
-		   'segundoapellido' => $segundoapellido,
-		   'foto' => $foto,
+		//var_dump($_POST);die;
+		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
+		$this->form_validation->set_rules('primerapellido','Primer Apellido', 'required');
+		$this->form_validation->set_rules('segundoapellido','Segundo Apellido', 'required');
+		$this->form_validation->set_rules('cedula', 'Cedula', 'required');
+		$this->form_validation->set_rules('foto', 'Foto', 'required');
+		$this->form_validation->set_rules('ingles', 'Ingles', 'required');
+		if ($this->form_validation->run() == FALSE){
+			echo "Ha ocurrido un error de validacion ";
+			echo anchor('Estudiantes/index', ' Intentelo de nuevo!');
+			echo validation_errors();
+		}else{
+			$nombre = $this->input->post('nombre');
+			$primerapellido = $this->input->post('primerapellido');
+			$segundoapellido = $this->input->post('segundoapellido');
+			$cedula = $this->input->post('cedula');
+			$foto = $this->input->post('foto');
+			$ingles = $this->input->post('ingles');
+			$data = array(
+			   	'nombre' => $nombre,
+			   	'primerapellido' => $primerapellido,
+			   	'segundoapellido' => $segundoapellido,
+			   	'cedula' => $cedula,
+			   	'foto' => $foto,
+			   	'nivelingles' => $ingles
 
-		);
-		$this->Estudiante_model->insert($data);
-		$cualidad = $this->input->post('cualidad');
-		$id = $this->input->post('cedula');
-		foreach ($cualidad as $data) {
-            $data2 = array(
-			'cualidad' => $cualidad,
-			'id' => $cedula,		  
-		);
-        }
-       
-		$this->Estudiante_model->insertcualidad($data2);
-		$carrera = $this->input->post('cursos');
-		$cualidad = $this->input->post('cualidad');
-		 $data2 = array(
-			'carrera_id' => $carrera,
-			'id' => $cedula,		  
-		);
-		$this->Estudiante_model->insertcarrera($data2);
-		
-		redirect('Estudiantes/index', 'refresh');
+			);
+			$lastid = $this->Estudiante_model->insert($data);
+			if ($lastid) {
+				//creamos la carrera 
+				$carrera = $this->input->post('carrera');
+				$insertCarrera = array(
+					'carrera_id' => $carrera,
+					'estudiante_id' => $lastid
+					);
+				$this->Estudiante_model->insertcarrera($insertCarrera);
+				//se termina de insertar la carrera
+				//se insertan las cualidades
+				$cuali = $this->input->post('cualidad');
+				foreach ($cuali as $dat) {
+					$dato = array(
+						'estudiante_id' => $lastid,
+						'cualidad_id' => $dat
+						);
+				$this->Estudiante_model->insertcualidad($dato);
+				//se terminan las cualidades 
+				}
+				$proyectos = $this->input->post('proyecto');
+				foreach ($proyectos as $proy) {
+					$insert = array(
+						'proyecto_id'	=> $proy,
+						'estudiante_id'	=> $lastid
+					);
+					$this->Estudiante_model->insertproyecto($insert);
+				}
+			}else{
+				echo "error al insertar datos del estudiante";
+			}
+			redirect('Estudiantes/index', 'refresh');
+		}
 	}
-	function toupdate(){
-		$id = $this->input->get("uid");
-		$query['carreras'] = $this->Estudiante_model->getid($id);
+	function toupdate($id){
+		//$id = $this->input->get("uid");
+		$query['estudiante'] = $this->Estudiante_model->getid($id);
+		$query['carreras'] = $this->Carrera_model->getall();
+		$query['cualidad'] = $this->Cualidad_model->getall();
+		$query['proyectos'] = $this->Proyecto_model->getall();
 		$this->load->view('header');
-		$this->load->view('Carreras/carreraUpdate', $query);
+		$this->load->view('Estudiante/estudianteUpdate', $query);
 	}
 	function update(){
-		$id = $this->input->post('id');
-		$codigo = $this->input->post('codigo');
-		$nombre = $this->input->post('nombre');
-		$data = array(
-			'codigo'=>$codigo,
-			'nombre'=>$nombre
-		);
-		$this->Estudiante_model->update($id,$data);
-		redirect('Carreras/index', 'refresh');
+		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
+		$this->form_validation->set_rules('primerapellido','Primer Apellido', 'required');
+		$this->form_validation->set_rules('segundoapellido','Segundo Apellido', 'required');
+		$this->form_validation->set_rules('cedula', 'Cedula', 'required');
+		$this->form_validation->set_rules('foto', 'Foto', 'required');
+		$this->form_validation->set_rules('ingles', 'Ingles', 'required');
+		if ($this->form_validation->run() == FALSE){
+			echo "Ha ocurrido un error de validacion ";
+			echo anchor('Estudiantes/index', ' Intentelo de nuevo!');
+			echo validation_errors();
+		}else{
+			$id = $this->input->post('id');
+			$nombre = $this->input->post('nombre');
+			$primerapellido = $this->input->post('primerapellido');
+			$segundoapellido = $this->input->post('segundoapellido');
+			$cedula = $this->input->post('cedula');
+			$foto = $this->input->post('foto');
+			$ingles = $this->input->post('ingles');
+			$data = array(
+			   	'nombre' => $nombre,
+			   	'primerapellido' => $primerapellido,
+			   	'segundoapellido' => $segundoapellido,
+			   	'cedula' => $cedula,
+			   	'foto' => $foto,
+			   	'nivelingles' => $ingles
+
+			);
+			$this->Estudiante_model->update($id,$data);
+			redirect('Estudiantes/index', 'refresh');
+		}
 	}
 	function delete()
 	{

@@ -30,8 +30,8 @@ class Cursos extends CI_Controller
 			redirect('Cursos/index', 'refresh');
 		}
 	}
-	function toupdate(){
-		$id = $this->input->get("uid");
+	function toupdate($id){
+		//$id = $this->input->get("uid");
 		$query['curso'] = $this->Curso_model->getid($id);
 		$this->load->view('header');
 		$this->load->view('Curso/CursoUpdate', $query);

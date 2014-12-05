@@ -57,7 +57,7 @@
 					</div>
 					<div class="form-group">
 						<?php
-							$dropdown_Carrera = "<select class=\"btn btn-default dropdown-toggle\" name=\"cursos\">";
+							$dropdown_Carrera = "<select class=\"btn btn-default dropdown-toggle\" name=\"carrera\">";
 								foreach ($carreras as $data) {
 									$dropdown_Carrera.="<option value=\"$data->id\">$data->nombre</option>";
 								}
@@ -97,13 +97,13 @@
 								<label>Proyectos</label>
 							</div>
 						</div>
-						<?php
-							$proyecto="";
-							foreach ($proyectos as $pro) {
-								$proyecto .="<input type=\"checkbox\"  id=\"$pro->id\" name=\"proyecto[]\" value=\"$pro->id\" />$pro->descripcion<br>";
-							}
-							echo $proyecto;
-						?>
+							<?php
+								$proyecto="";
+								foreach ($proyectos as $pro) {
+									$proyecto .="<input type=\"checkbox\"  id=\"$pro->id\" name=\"proyecto[]\" value=\"$pro->id\" />$pro->descripcion<br>";
+								}
+								echo $proyecto;
+							?>
 					</div>
 					<div class="form-group">
 						<?php
@@ -132,16 +132,18 @@
 									?>
 								</div>
 							</div>
-							<div class="col-md-4"></div>
+							<div class="col-md-4">
+								<a href=""></a>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-9">
 				<h4>Estudiantes actuales.</h4>
 					<?php
-					$table = "<table id=\"table\" class=\"table table-bordered\"><tr><th>Nombre Estudiante</th><th>Editar</th><th>Eliminar</th></tr>";
+					$table = "<table id=\"table\" class=\"table table-bordered\"><tr><th>Nombre</th><th>Apellido</th><th>Apellido</th><th>Cedula</th><th>Foto</th><th>Nivel Ingles</th><th>Editar</th><th>Eliminar</th></tr>";
 						foreach ($estudiantes as $data) {
-							$table.= "<tr><td>".$data->nombre."</td>";
+							$table.= "<tr><td>".$data->nombre."</td><td>".$data->primerapellido."</td><td>".$data->segundoapellido."</td><td>".$data->cedula."</td><td>".$data->foto."</td><td>".$data->nivelingles."</td>";
 							$table.="<td><button type=\"button\" data-id=\"$data->id\" class=\"editar btn btn-default\">Editar</button></td><td><button type=\"button\" data-id=\"$data->id\" class=\"eliminar btn btn-default\">Eliminar</button></td></tr>";
 						}
 						$table.="</table>";
@@ -155,7 +157,7 @@
 
 		$( ".editar" ).click(function() {
 	    	var id = $(this).data('id');
-			window.location.href = "toupdate/?uid=" + id;
+			window.location.href = "toupdate/" + id;
 		});
 
 		$(".eliminar").click(function(){
