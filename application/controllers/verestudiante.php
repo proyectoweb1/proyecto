@@ -18,7 +18,7 @@ class verestudiante extends CI_Controller
 		$query['cualidad'] = $this->verestudiante_model->getcualida($id);
 		$query['proyectos'] = $this->verestudiante_model->getproyecto($id);
 		$this->load->view('header');
-		$this->load->view('estu_vista', $query);
+		$this->load->view('Estudiante_vista/estu_vista', $query);
 	}
 	
 
