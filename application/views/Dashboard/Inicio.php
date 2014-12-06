@@ -47,6 +47,28 @@ foreach ($carrera as $data) {
 
 }
     </script>
+      <div class="ver_estudiante">     
+    <div class="col-md-9">
+        <h4>Estudiantes.</h4>
+          <?php
+          $table = "<table id=\"table\" class=\"table table-bordered\"><tr><th>Nombre</th><th>Apellidos</th><th>Ver</th></tr>";
+            foreach ($estudiantes as $data) {
+              $table.= "<tr><td>".$data->nombre."</td>";
+              $table.= "<td>".$data->primerapellido."</td>";
+              $table.="<td><button type=\"button\" data-id=\"$data->id\" class=\"ver btn btn-default\">Ver</button></td></tr>";
+            }
+            $table.="</table>";
+          echo $table;
+          ?>
+        </div>
+          </div>
+      <script type="text/javascript">
+
+    $( ".ver" ).click(function() {
+        var id = $(this).data('id');
+      window.location.href = "verestudiante/toupdate/?uid=" + id;
+    });
+    </script>
  <body>
  	<div id="piechart"style="width: 500px; height: 200px;"></div>
 </body>

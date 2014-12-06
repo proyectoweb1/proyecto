@@ -6240,13 +6240,17 @@ width: 100px;
 #imgextencion{
 
   margin: 25px;
-  padding: 20px;
+  padding: 10px;
 }
 #confimg{ 
 text-align: center;
-}  
+} 
+.ver_estudiante{ 
+position: relative; left: 450px; top: -350px;
+
+}   
 #piechart{
-position: relative; left: 500px; top: -500px;
+position: relative; left: 500px; top: -550px;
 }
 #barragoogle{
 position: relative; left: 50px; top: -550px;
