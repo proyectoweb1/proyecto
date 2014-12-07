@@ -6249,6 +6249,10 @@ text-align: center;
 position: relative; left: 450px; top: -350px;
 
 }   
+.ver_perfil{ 
+position: relative; left: 410px; top: -485px;
+
+}   
 #piechart{
 position: relative; left: 500px; top: -550px;
 }

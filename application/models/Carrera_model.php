@@ -11,6 +11,19 @@ class Carrera_model extends CI_Model
 		$query = $this->db->get('carrera');
         return $query->result();
 	}
+    function getcantidad()
+    {
+       $this->db->select('cantidad');
+        $this->db->from('proyecto pro');
+        $this->db->join('estudiante_proyecto epro', 'pro.id = epro.proyecto_id');
+        $this->db->where('estudiante_id', $id);
+        $query = $this->db->get(); 
+       if ($query->num_rows() > 0 ){
+            return $query->result();
+        } else {
+            return null;
+        }
+    }
 	function insert($data)
 	{
 		$this->db->insert('carrera',$data);
