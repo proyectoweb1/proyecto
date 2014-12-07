@@ -31,9 +31,24 @@ class Estudiante_model extends CI_Model
         $this->db->where('id',$id);
         $this->db->update('estudiante',$data);
     }
-   function delete($id){
+    function delete($id){
         $this->db->where('id', $id);
         $this->db->delete('estudiante');
+    }
+    function deleteEstudiante_cualidad($id)
+    {
+        $this->db->where('estudiante_id',$id);
+        $this->db->delete('estudiante_cualidad');
+    }
+    function deleteEstudiante_proyecto($id)
+    {
+        $this->db->where('estudiante_id',$id);
+        $this->db->delete('estudiante_proyecto');   
+    }
+    function deleteEstudiante_carrera($id)
+    {
+        $this->db->where('estudiante_id',$id);
+        $this->db->delete('estudiante_carrera');
     }
     function getid($id){
         $this->db->where('id', $id);
