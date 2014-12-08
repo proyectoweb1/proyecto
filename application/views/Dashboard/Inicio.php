@@ -66,7 +66,7 @@ foreach ($carrera as $data) {
 
     $( ".ver" ).click(function() {
         var id = $(this).data('id');
-      window.location.href = "index.php/verestudiante/toupdate/?uid=" + id;
+      window.location.href = "index.php/verestudiante/toupdate/?id=" + id;
     });
     </script>
  <body>

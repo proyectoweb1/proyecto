@@ -4,11 +4,8 @@
 			<div class="col-md-12">
 				<div class="col-md-4"></div>
 				<div class="col-md-4">
-				<h4>Ingrese un Estudiante.</h4>
-					<?php
-						echo form_open('Estudiantes/update');
-					?>
-					<div class="form-group">
+				<h4>Perfil de Estudiante.</h4>
+						<div class="form-group">
 						<?php
 							$id = array(
 				              'name'        => 'id',
@@ -23,6 +20,7 @@
 			            ?>
 					</div>
 					<div class="form-group">
+						<h5>Nombre</h5>
 						<?php
 							$nombre = array(
 				              'name'        => 'nombre',
@@ -36,6 +34,7 @@
 			            ?>
 					</div>
 					<div class="form-group">
+						<h5>Apellido 1</h5>
 						<?php
 							$primerapellido = array(
 				              'name'        => 'primerapellido',
@@ -49,6 +48,7 @@
 			            ?>
 					</div>
 					<div class="form-group">
+						<h5>Apellido 2</h5>
 						<?php
 							$segundoapellido = array(
 				              'name'        => 'segundoapellido',
@@ -62,6 +62,7 @@
 			            ?>
 					</div>
 					<div class="form-group">
+						<h5>Cedula</h5>
 						<?php
 							$cedula = array(
 				              'name'        => 'cedula',
@@ -75,59 +76,62 @@
 			            ?>
 					</div>
 					<div class="form-group">
+						<h5>Carrera</h5>
 						<?php
-							$dropdown_Carrera = "<select class=\"btn btn-default dropdown-toggle\" name=\"cursos\">";
-								foreach ($carreras as $data) {
-									$dropdown_Carrera.="<option value=\"$data->id\">$data->nombre</option>";
-								}
-								$dropdown_Carrera.="</select>";
-							echo $dropdown_Carrera;
-						?>
-					</div>
-					<div class="form-group">
+							$nombrecarrera = array(
+				              'name'        => 'segundoapellido',
+				              'id'          => 'segundoapellido_id',
+				              'maxlength'   => '100',
+				              'placeholder' => 'apellido2',
+				              'class'		=> 'form-control',
+				              'value'		=> $carreras->nombre
+				            );
+				            echo form_input($nombrecarrera);
+			            ?>
+					 </div>
+					 <div class="form-group">
+					 	<h5>Ingles</h5>
 						<?php
 							$ingles = array(
-				              'name'        => 'ingles',
-				              'id'          => 'ingles_id',
+				              'name'        => 'nivelingles',
+				              'id'          => 'nivelingles_id',
 				              'maxlength'   => '100',
-				              'placeholder' => 'Nivel de Ingles',
+				              'placeholder' => 'ingles',
 				              'class'		=> 'form-control',
 				              'value'		=> $estudiante->nivelingles
 				            );
 				            echo form_input($ingles);
 			            ?>
-					</div>
-					<div class="form-group">
-					<div class="form-group">
-						<?php
-							$file = array(
-				              'name'        => 'foto',
-				              'id'          => 'foto_id',
-				              'type'		=>'file'
-				            );
-				            echo form_input($file);
-			            ?>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="col-md-4"></div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<?php
-										$data = array(
-										    'name' => 'button',
-										    'id' => 'button_id',
-										    'type' => 'submit',
-										    'class' => 'btn btn-default',
-										    'content' => 'Actualizar'
-										);
-										echo form_button($data);
-									?>
-								</div>
-							</div>
-							<div class="col-md-4"></div>
-						</div>
-					</div>
+					 </div>
+					     <div class="ver_perfil">
+					    <div class="ver_cualidades">     
+                       <div class="col-md-9">
+                      <h4>Cualidades</h4>
+                        <?php
+                         $table = "<table id=\"table\" class=\"table table-bordered\"><tr><th>Cualidad</th></tr>";
+                      foreach ($cualidad as $data) {
+                       $table.= "<tr><td>".$data->nombre."</td>";
+                      }
+                    $table.="</table>";
+                   echo $table;
+                  ?>
+                   </div>
+                     </div>
+						<div class="ver_proyectos">     
+                       <div class="col-md-9">
+                      <h4>Proyectos</h4>
+                        <?php
+                         $table = "<table id=\"table\" class=\"table table-bordered\"><tr><th>Descripcion</th></tr>";
+                      foreach ($proyectos as $data) {
+                       $table.= "<tr><td>".$data->descripcion."</td>";
+                      }
+                    $table.="</table>";
+                   echo $table;
+                  ?>
+                   </div>
+                     </div>
+			    	</div>
+			    	</div>
 				</div>
 			</div>
 		</div>
