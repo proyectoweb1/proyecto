@@ -10,5 +10,10 @@ class LogIn extends CI_Controller
 		parent::__construct();
 		$this->load->model('Login_model','login');
 	}
+	function index()
+	{
+		$this->load->view('header');
+		$this->load->view('LogIn/Main');
+	}
 }
 ?>
