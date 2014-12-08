@@ -11,8 +11,8 @@ class Verestudiante extends CI_Controller
 		$this->load->model('verestudiante_model');
 	}
 
-	function toupdate(){
-		$id = $this->input->get("id");
+	function toupdate($id){
+		//$id = $this->input->post("id");
 		$query['estudiante'] = $this->verestudiante_model->getid($id);
 		$query['carreras'] = $this->verestudiante_model->getcarrera($id);
 		$query['cualidad'] = $this->verestudiante_model->getcualidad($id);

@@ -104,10 +104,14 @@ p{
     width:100%;
 }
 #piechart{
-    margin-right: 500px;
-    margin-top: 10px;
+    margin-right: 100px;
+    margin-top: 50px;
+    left: 700;
+    top: -550;
+    width: 500px;
+    height: 200px;
 }
 #barragoogle{
-margin-top: 10px;
+margin-top: 600px;
 
 }
