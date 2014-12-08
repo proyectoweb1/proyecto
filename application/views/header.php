@@ -25,7 +25,7 @@
 					<li><a href="<?php echo	base_url("index.php/Tecnologia/index")?>">Tecnologia</a></li>
 					<li><a href="<?php echo	base_url("index.php/Proyecto/index")?>">Proyectos</a></li>
 					<li><a href="<?php echo	base_url("index.php/Cursos/index")?>">Cursos</a></li>
-					<li><a href="#">Cerrar Sesion</a></li>
+					<li><a href="<?php echo	base_url()?>">Cerrar Sesion</a></li>
 				</div>
 			</div>
 	</nav>

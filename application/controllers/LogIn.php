@@ -12,8 +12,20 @@ class LogIn extends CI_Controller
 	}
 	function index()
 	{
-		$this->load->view('header');
+		
+		$this->load->view('headlogin');
 		$this->load->view('LogIn/Main');
+	}
+	function autenticar()
+	{
+		$username = $this->input->post('user');
+		$password = $this->input->post('pass');
+		$user = $this->login->validar($username,$password);
+		if ($user) {
+			redirect("/welcome/index");
+		}else{
+			redirect("/LogIn/index");
+		}
 	}
 }
 ?>
