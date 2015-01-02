@@ -129,7 +129,11 @@ class Estudiantes extends CI_Controller
 	{
 		if($this->input->is_ajax_request() && $this->input->post('id')){
 			$id = $this->input->post('id');
+			$this->Estudiante_model->deleteEstudiante_cualidad($id);
+			$this->Estudiante_model->deleteEstudiante_proyecto($id);
+			$this->Estudiante_model->deleteEstudiante_carrera($id);
 			$this->Estudiante_model->delete($id);
+
 		}
 		
 	}

@@ -13,8 +13,8 @@ function __construct()
 	{
         $query['carrera'] = $this->Carrera_model->getAll();
         $query['estudiantes'] = $this->Estudiante_model->getAll();
-       		$this->load->view('header');
-       		$this->load->view('microchat/index');
+       	$this->load->view('header');
+       	//$this->load->view('microchat/index');
 		$this->load->view('Dashboard/Inicio',$query);
 	}
 	

@@ -1,38 +1,57 @@
 <?php
-
 class Estudiante_model extends CI_Model
 {
-	
-	function __construct()
-	{
-		parent::__construct();
-	}
-	function getall(){
-		$query = $this->db->get('estudiante');
+    
+    function __construct()
+    {
+        parent::__construct();
+    }
+    function getall(){
+        $query = $this->db->get('estudiante');
         return $query->result();
-	}
-	function insert($data)
-	{
-		$this->db->insert('estudiante',$data);
-	}
-    function insertcarrera($data)
-    {
-        $this->db->insert('estudiante_carrera',$data);
     }
-    function insertcualidad($data2)
+    function insert($data)
     {
-        $this->db->insert('estudiante_cualidad',$data2);
+        $this->db->insert('estudiante',$data);
+        return $this->db->insert_id();
     }
-	function update($id,$data){
+    function insertcarrera($insertCarrera)
+    {
+        $this->db->insert('estudiante_carrera',$insertCarrera);
+    }
+    function insertcualidad($dato)
+    {
+        $this->db->insert('estudiante_cualidad',$dato);
+    }
+    function insertproyecto($insert)
+    {
+        $this->db->insert('estudiante_proyecto',$insert);
+    }
+    function update($id,$data){
         $this->db->where('id',$id);
         $this->db->update('estudiante',$data);
     }
-   function delete($id){
+    function delete($id){
         $this->db->where('id', $id);
         $this->db->delete('estudiante');
     }
+    function deleteEstudiante_cualidad($id)
+    {
+        $this->db->where('estudiante_id',$id);
+        $this->db->delete('estudiante_cualidad');
+    }
+    function deleteEstudiante_proyecto($id)
+    {
+        $this->db->where('estudiante_id',$id);
+        $this->db->delete('estudiante_proyecto');   
+    }
+    function deleteEstudiante_carrera($id)
+    {
+        $this->db->where('estudiante_id',$id);
+        $this->db->delete('estudiante_carrera');
+    }
     function getid($id){
-    	$this->db->where('id', $id);
+        $this->db->where('id', $id);
         $query = $this->db->get('estudiante');
         if ($query->num_rows() > 0 ){
             return $query->row();
